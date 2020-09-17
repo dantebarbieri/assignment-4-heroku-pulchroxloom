@@ -1,0 +1,40 @@
+<%= link_to books_path do %>
+	<i class="fas fa-home fa-3x"></i>
+<% end %>
+
+<% @page_title = "Show Details" %>
+
+<h1>Show Details</h1>
+
+<p><%= @book.title %> by <%= @book.author %>:</p>
+
+<table class="data-inline">
+	<tr>
+		<th>Title</th>
+		<td><%= @book.title %></td>
+	</tr>
+	<tr>
+		<th>Author</th>
+		<td><%= @book.author %></td>
+	</tr>
+	<tr>
+		<th>Genre</th>
+		<td><%= @book.genre %></td>
+	</tr>
+	<tr>
+		<th>Price</th>
+		<td><%= "$%0.2f" % @book.price %></td>
+	</tr>
+	<tr>
+		<th>Published on</th>
+		<td><%= @book.publish_date %></td>
+	</tr>
+	<tr>
+		<th>Added to Database on</th>
+		<td><%= @book.created_at %></td>
+	</tr>
+	<tr>
+		<th>Last Updated on</th>
+		<td><%= @book.updated_at %></td>
+	</tr>
+</table>
