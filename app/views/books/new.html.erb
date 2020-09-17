@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
 			<th>Price (USD)</th>
-			<td><%= f.number_field(:price) %></td>
+			<td><%= f.number_field(:price, :step => 0.01) %></td>
 		</tr>
 		<tr>
 			<th>Publish Date (yyyy-mm-dd)</th>
