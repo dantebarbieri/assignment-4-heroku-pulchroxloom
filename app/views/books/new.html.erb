@@ -1,0 +1,34 @@
+<%= link_to books_path do %>
+	<i class="fas fa-home fa-3x"></i>
+<% end %>
+
+<% @page_title = "Add a Book" %>
+
+<h1>Add a Book</h1>
+
+<%= form_for(@book) do |f| %>
+	<table>
+		<tr>
+			<th>Title</th>
+			<td><%= f.text_field(:title) %></td>
+		</tr>
+		<tr>
+			<th>Author</th>
+			<td><%= f.text_field(:author) %></td>
+		</tr>
+		<tr>
+			<th>Genre</th>
+			<td><%= f.text_field(:genre) %></td>
+		</tr>
+		<tr>
+			<th>Price (USD)</th>
+			<td><%= f.text_field(:price) %></td>
+		</tr>
+		<tr>
+			<th>Publish Date (yyyy-mm-dd)</th>
+			<td><%= f.text_field(:publish_date) %></td>
+		</tr>
+	</table>
+
+	<%= f.submit("Create Book", :class => "btn btn-primary") %>
+<% end %>

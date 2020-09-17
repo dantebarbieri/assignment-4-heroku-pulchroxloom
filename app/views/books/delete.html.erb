@@ -1,0 +1,45 @@
+<%= link_to books_path do %>
+	<i class="fas fa-home fa-3x"></i>
+<% end %>
+
+<% @page_title = "Delete" %>
+
+<h1>Delete</h1>
+
+<p>About to Delete the Following Book:</p>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<td><%= @book.title %></td>
+	</tr>
+	<tr>
+		<th>Author</th>
+		<td><%= @book.author %></td>
+	</tr>
+	<tr>
+		<th>Genre</th>
+		<td><%= @book.genre %></td>
+	</tr>
+	<tr>
+		<th>Price</th>
+		<td><%= "$%0.2f" % @book.price %></td>
+	</tr>
+	<tr>
+		<th>Published on</th>
+		<td><%= @book.publish_date %></td>
+	</tr>
+	<tr>
+		<th>Added to Database on</th>
+		<td><%= @book.created_at %></td>
+	</tr>
+	<tr>
+		<th>Last Updated on</th>
+		<td><%= @book.updated_at %></td>
+	</tr>
+</table>
+
+<%= form_for(@book, :method => 'delete') do |f| %>
+	<p>Are you sure?</p>
+	<%= f.submit("Delete Book", :class => "btn btn-primary") %>
+<% end %>
