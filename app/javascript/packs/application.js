@@ -6,7 +6,6 @@
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-import "bootstrap"
 
 require("@rails/ujs").start()
 require("turbolinks").start()
