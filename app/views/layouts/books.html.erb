@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title><%= @page_title || "Book Collection Application" %></title>
+		<%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	</head>
+
+	<body>
+		<%= yield %>
+		<% if !flash[:error].blank? %>
+			<div class="error">
+				<h3>Error</h3>
+				<%= flash[:notice] %>
+			</div>
+		<% end %>
+		<% if !flash[:notice].blank? %>
+			<div class="notice">
+				<h3>Notice</h3>
+				<%= flash[:notice] %>
+			</div>
+		<% end %>
+	</body>
+</html>

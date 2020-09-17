@@ -1,0 +1,53 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+table {
+	border-collapse: separate;
+	border: solid black 1px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+td, th {
+	border-left: solid black 1px;
+	border-bottom: solid black 1px;
+}
+
+td:first-child, th:first-child {
+	border-left: none;
+}
+
+tr:not(:first-child):last-child {
+	> td, > th {
+		border-bottom: none;
+	}
+}
+
+table.data-inline tr > th {
+	text-align: right;
+}
+
+tr.data-row > td {
+	text-align: center;
+}
+
+div.error {
+	background-color: lightcoral;
+	border: solid firebrick;
+	color: firebrick;
+	border-radius: 2em;
+	padding: 1em;
+}
+
+div.notice {
+	background-color: lightgreen;
+	border: solid darkgreen;
+	color: darkgreen;
+	border-radius: 2em;
+	padding: 1em;
+}

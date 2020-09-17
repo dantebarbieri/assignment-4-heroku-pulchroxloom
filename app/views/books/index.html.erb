@@ -1,0 +1,57 @@
+<% @page_title = "Home Page" %>
+
+<h1>Home Page</h1>
+
+<p>The books and their functions are below:</p>
+
+<ul>
+	<li><i class="fas fa-home"></i> &mdash; Home Page</li>
+	<li><i class="fas fa-info-circle"></i> &mdash; Show Details</li>
+	<li><i class="fas fa-edit"></i> &mdash; Update a Book</li>
+	<li><i class="fas fa-trash"></i> &mdash; Delete</li>
+	<li><i class="fas fa-plus-circle"></i> &mdash; Add a Book</li>
+</ul>
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Price</th>
+			<th><strong>Details</strong></th>
+			<th><strong>Edit</strong></th>
+			<th><strong>Remove</strong></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @books.each do |book| %>
+			<tr class="data-row">
+				<td><%= book.title %></td>
+				<td><%= book.author %></td>
+				<td><%= "$%0.2f" % book.price %></td>
+				<td>
+					<%= link_to book_path(book) do %>
+						<i class="fas fa-info-circle"></i>
+					<% end %>
+				</td>
+				<td>
+					<%= link_to edit_book_path(book) do %>
+						<i class="fas fa-edit"></i>
+					<% end %>
+				</td>
+				<td>
+					<%= link_to delete_book_path(book) do %>
+						<i class="fas fa-trash"></i>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+		<tr>
+			<td>
+				<%= link_to new_book_path do %>
+					<i class="fas fa-plus-circle"></i>
+				<% end %>
+			</td>
+		</tr>
+	</tbody>
+</table>
